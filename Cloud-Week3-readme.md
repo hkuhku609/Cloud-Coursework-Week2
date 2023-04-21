@@ -47,8 +47,9 @@ pm2 startup systemd
 12. `sudo apt-get install -y nginx`
   - ***Optional:*** `sudo systemctl status nginx`(Check if it is active)
   - ![](https://user-images.githubusercontent.com/107769663/233511361-82c5b41b-d598-486f-8baa-83cd11fcbd21.png)
-13. Use nano to edit the Nginx configuration file. This file defines the settings for the Nginx server, such as which port to listen on, which root directory to use, and so on. After making changes to the configuration file, you need to reload Nginx to make the changes take effect.
-`sudo nano /etc/nginx/conf.d/server.conf`
+13. `sudo nano /etc/nginx/conf.d/server.conf`
+Use nano to edit the Nginx configuration file. This file defines the settings for the Nginx server, such as which port to listen on, which root directory to use, and so on. After making changes to the configuration file, you need to reload Nginx to make the changes take effect.
+
 ```
 server {
     listen 80;
