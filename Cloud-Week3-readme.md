@@ -15,7 +15,7 @@ npm i pm2 -g
 
 2. Click "Launch instance"
 3. Wait for approximately 10 minutes to allow the EC2 instance to install Node.js and PM2.
-  - ***Optional:*** (You can right-click on the instance, go to "Monitor and troubleshoot", and then select "Get system log" to view its contents. If the log is still completely black, it is recommended to wait a little longer.)
+>  - ***Optional:*** (You can right-click on the instance, go to "Monitor and troubleshoot", and then select "Get system log" to view its contents. If the log is still completely black, it is recommended to wait a little longer.)
 4. Right-click on the instance and select "Stop Instance".
 5. Right-click on the instance after it's in the "Stopped" state, and select "Create Image" from the "Image and templates" menu.
 6. Enter the Image name and then click the Create Image button.
@@ -38,16 +38,18 @@ pm2 startup systemd
 ![User Data](https://user-images.githubusercontent.com/107769663/233487978-752f53d1-1933-45d4-b2b2-066dba60bd51.png)
 
 9. Click on "Launch Instance", and wait for about 10 minutes for the instance to execute the user data command.
-  - ***Optional:*** (You can refer to [step 9](https://github.com/bazmurphy/node-visitor-count/blob/main/README.md) if you want to know whether the deployment was successful.)
+>  - ***Optional:*** (You can refer to [step 9](https://github.com/bazmurphy/node-visitor-count/blob/main/README.md) if you want to know whether the deployment was successful.)
 
 
 ## C. Using Nginx as a reverse proxy server allows the application to use port 80 (HTTP).
 10. Connect to the instance mentioned above B.(step 7 - 9)
 11. `sudo apt-get update`
 12. `sudo apt-get install nginx` -> 'Yes'
-  - ***Optional:*** `sudo systemctl status nginx`(Check if it is active)
-  - ![](https://user-images.githubusercontent.com/107769663/233511361-82c5b41b-d598-486f-8baa-83cd11fcbd21.png)
+>  - ***Optional:*** `sudo systemctl status nginx`(Check if it is active)
+>  - ![](https://user-images.githubusercontent.com/107769663/233511361-82c5b41b-d598-486f-8baa-83cd11fcbd21.png)
 13. `sudo nano /etc/nginx/conf.d/server.conf`
+
+>(The file name 'server' can be changed to something else, such as xxx.conf or react.conf)
 
 Use nano to edit the Nginx configuration file. This file defines the settings for the Nginx server, such as which port to listen on, which root directory to use, and so on. After making changes to the configuration file, you need to reload Nginx to make the changes take effect.
 
@@ -66,8 +68,8 @@ server {
 ```
 ![](https://user-images.githubusercontent.com/107769663/233511933-46b01b6a-27a7-44ff-8a73-a10f60e90537.png)
 
-  - ***Optional:*** `sudo nginx -t`(To test if the Nginx configuration file contains any errors. It does not actually start Nginx but only checks if the configuration file is correct.)
-  - ![](https://user-images.githubusercontent.com/107769663/233511274-4cc28ae1-f6c6-4d4d-a98b-9c46a5fb4b13.png)
+>  - ***Optional:*** `sudo nginx -t`(To test if the Nginx configuration file contains any errors. It does not actually start Nginx but only checks if the configuration file is correct.)
+>  - ![](https://user-images.githubusercontent.com/107769663/233511274-4cc28ae1-f6c6-4d4d-a98b-9c46a5fb4b13.png)
 14. `sudo service nginx reload`(To reload Nginx to make the changes take effect.)
 15. Finish
 
