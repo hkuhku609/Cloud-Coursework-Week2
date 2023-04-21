@@ -44,7 +44,7 @@ pm2 startup systemd
 ## C. Using Nginx as a reverse proxy server allows the application to use port 80 (HTTP).
 10. Connect to the instance mentioned above B.(step 7 - 9)
 11. `sudo apt-get update`
-12. `sudo apt-get install -y nginx`
+12. `sudo apt-get install nginx` -> 'Yes'
   - ***Optional:*** `sudo systemctl status nginx`(Check if it is active)
   - ![](https://user-images.githubusercontent.com/107769663/233511361-82c5b41b-d598-486f-8baa-83cd11fcbd21.png)
 13. `sudo nano /etc/nginx/conf.d/server.conf`
