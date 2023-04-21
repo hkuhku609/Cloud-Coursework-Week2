@@ -23,7 +23,7 @@ npm i pm2 -g
 
 ## B. Load setup image, start the application with a script
 7. Refer to [steps 0-2,4-7](https://github.com/bazmurphy/node-visitor-count/blob/main/README.md) on Baz's Readme, with the exception of step 3 which must be replaced with the following steps
-  - Application and OS Images (Amazon Machine Image)
+  - Application and OS Images (Amazon Machine Image)-> Click "My AMIs"-> choose your created Image
 ![Screenshot 2023-04-20 at 21 52 57](https://user-images.githubusercontent.com/107769663/233485434-856ed87c-8733-4f0f-a5a5-20ab73f0fbf3.png)
 8. User Data - Enter user data in the field.
 ```bash
